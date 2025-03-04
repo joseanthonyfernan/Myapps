@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Pre-Enrollment</title>
+    <style>
+        /* Popup Styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            max-width: 90%;
+            max-height: 90%;
+            text-align: center;
+        }
+
+        .popup img {
+            width: 100%;
+            height: auto;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            color: red;
+            padding: 5px;
+            font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+        }
+
+        .popup h2 {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .popup p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>    
+    <div id="Cheesecake" class="tabcontent">
+        <h1>Pre-Enrollment Step By Step</h1>
+        <p>GOOD DAY AND WELCOME</p>
+        <div class="image-container">
+            <img src="assets/images/1740398167107.jpg" alt="Step 1" onclick="openPopup(this, 'STEP 1', 'Open mandridejoscommunitycollege.com')">
+            <img src="assets/images/09663009973.jpg" alt="Step 2" onclick="openPopup(this, 'Step 2', 'Click Enroll Now Button')">
+            <img src="assets/images/1740398167085.jpg" alt="Step 3" onclick="openPopup(this, 'Step 3', 'Click Pre-Enroll Now Button')">
+            <img src="assets/images/1740398167073.jpg" alt="Step 4" onclick="openPopup(this, 'Step 4', 'Click Create an Account ')">
+            <img src="assets/images/1741047654501.jpg" alt="Step 5" onclick="openPopup(this, 'Step 5', 'Enter your Email and strong password and check Terms And Conditions then click Submit Button')">
+            <img src="assets/images/1741048904805.jpg" alt="Step 6" onclick="openPopup(this, 'Step 6', 'Click Verify your Gmail or Open your Gmail Apps')">
+            <img src="assets/images/1741047654461.jpg" alt="Step 7" onclick="openPopup(this, 'Step 7', 'Description for Step 7')">
+            <img src="assets/images/1741047654442.jpg" alt="Step 8" onclick="openPopup(this, 'Step 8', 'Description for Step 8')">
+            <img src="assets/images/1741047654417.jpg" alt="Step 9" onclick="openPopup(this, 'Step 9', 'Description for Step 9')">
+            <img src="assets/images/1741047654400.jpg" alt="Step 10" onclick="openPopup(this, 'Step 10', 'Description for Step 10')">
+            <img src="assets/images/1741047654356.jpg" alt="Step 11" onclick="openPopup(this, 'Step 11', 'Description for Step 11')">
+            <img src="assets/images/1741047654339.jpg" alt="Step 12" onclick="openPopup(this, 'Step 12', 'Description for Step 12')">
+            <img src="assets/images/1741047654319.jpg" alt="Step 13" onclick="openPopup(this, 'Step 13', 'Description for Step 13')">
+            <img src="assets/images/1741047654300.jpg" alt="Step 14" onclick="openPopup(this, 'Step 14', 'Description for Step 14')">
+            <img src="assets/images/1741047654255.jpg" alt="Step 15" onclick="openPopup(this, 'Step 15', 'Description for Step 15')">
+        </div>
+    </div>
+
+    <!-- Popup and Overlay -->
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup">
+        <span class="popup-close" onclick="closePopup()">X</span>
+        <h2 id="popup-title"></h2>
+        <p id="popup-description"></p>
+        <img id="popup-img" src="" alt="Popup Image">
+    </div>
+
+    <!--========== MAIN JS ==========-->
+    <script>
+        function openPopup(imgElement, title, description) {
+            var popup = document.getElementById("popup");
+            var popupImg = document.getElementById("popup-img");
+            var popupTitle = document.getElementById("popup-title");
+            var popupDescription = document.getElementById("popup-description");
+            var overlay = document.getElementById("overlay");
+
+            popupImg.src = imgElement.src;
+            popupTitle.innerText = title;
+            popupDescription.innerText = description;
+            popup.style.display = "block";
+            overlay.style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>
