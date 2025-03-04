@@ -8,7 +8,25 @@
     <!--========== CSS ==========-->
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>Pre-Enrollment</title>
+    
     <style>
+        body {
+    background: url('assets/images/3460419_62611.jpg'), linear-gradient(to bottom left, rgba(255, 255, 255, 0.5), rgba(0, 21, 255, 0.5));
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    animation: gradientAnimation 5s infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: left top;
+    }
+    100% {
+        background-position: right bottom;
+    }
+}
+
         /* Popup Styling */
         .popup {
             display: none;
@@ -62,9 +80,37 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+            background: linear-gradient(to right, #000000, #000000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 5s ease-in-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+            }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+            }
+            }
+        p   {
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+
     <div id="Cheesecake" class="tabcontent">
         <h1>Pre-Enrollment Step By Step</h1>
         <p>FIRST PROCESS</p>
@@ -83,12 +129,11 @@
             <img src="assets/images/1741047654339.jpg" alt="Step 12" onclick="openPopup(this, 'STEP 12', 'Submit your personal information accurately. Ensure all required fields are completed.')">
             <img src="assets/images/1741047654319.jpg" alt="Step 13" onclick="openPopup(this, 'STEP 13', 'Click Okay Thanks!')">
             <img src="assets/images/1741047654300.jpg" alt="Step 14" onclick="openPopup(this, 'STEP 14', 'Click Done!')">
-            <img src="assets/images/1741047654255.jpg" alt="Step 15" onclick="openPopup(this, 'STEO 15', 'Visit your account dashboard')">
+            <img src="assets/images/1741047654255.jpg" alt="Step 15" onclick="openPopup(this, 'STEP 15', 'Visit your account dashboard')">
         </div>
     </div>
 
     <div id="Cheesecake" class="tabcontent">
-        <h1>Pre-Enrollment Step By Step</h1>
         <p>PROCESS NO. 2</p>
         <div class="image-container">
             <img src="assets/images/1740398167107.jpg" alt="Step 1" onclick="openPopup(this, 'STEP 1', 'Open mandridejoscommunitycollege.com')">
@@ -139,5 +184,14 @@
             document.getElementById("overlay").style.display = "none";
         }
     </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.location.href.includes("home.html")) {
+            history.replaceState(null, "", window.location.href.replace("home.html", ""));
+        }
+    });
+</script>
+
 </body>
 </html>
