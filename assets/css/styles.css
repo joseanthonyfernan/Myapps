@@ -1,0 +1,59 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Optional: Style for the button */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px;
+    cursor: pointer;
+}
+
+            .image-container {
+    display: flex; /* Use flexbox to arrange images */
+    flex-wrap: wrap; /* Allow images to wrap to the next line */
+}
+
+.image-container img {
+    width: calc(33.33% - 10px); /* Set width to approximately 1/3 of the container width, subtracting padding */
+    height: auto; /* Maintain aspect ratio */
+    box-sizing: border-box; /* Include padding and border in the width */
+    padding: 5px; /* Add padding for spacing between images */
+    margin: 5px; /* Remove any default margins */
+}
+
+/* Optional: Adjust styles for better appearance */
+.tabcontent {
+    padding: 20px; /* Add padding around content */
+}
+
+h1 {
+    text-align: center; /* Center-align the heading */
+}
+p {
+    text-align: center; /* Center-align the heading */
+}
