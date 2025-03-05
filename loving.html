@@ -1,0 +1,397 @@
+                                                                                                                                                                <!-- Replace with your HTML Code 
+  (Leave empty if not needed) --><!DOCTYPE html>
+  <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css.css">
+        <title>¿love?</title>
+    </head>
+    <style>
+/* Replace with your CSS Code 
+  (Leave empty if not needed) */
+  body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #purple;
+}
+
+.container {
+  text-align: center;
+}
+
+#gifContainerImg {
+  width: 60%;
+  height: 60%;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+#siBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #009705; /* verde */
+  color: white;
+  border: 2px solid #ffc0cb; /* Bordes rosa */
+  border-radius: 10px; /* Esquinas redondeadas */
+}
+
+#noBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #ff5733; /* Rojo */
+  color: white;
+  border: 2px solid #ffc0cb; /* Bordes rosa */
+  border-radius: 10px; /* Esquinas redondeadas */
+}
+#noBtn span {
+  font-size: 18px;
+  color: #fcf4f4; /* Cambia el color del texto según tus preferencias */
+  /* Otras propiedades de estilo aquí */
+}
+
+#siBtn:hover {
+  background-color:; /* Cambia a otro color en hover, puedes ajustar el valor según tus preferencias */
+}
+#noBtn:hover {
+  background-color: #641e0d; /* Cambia a otro color en hover, puedes ajustar el valor según tus preferencias */
+}
+.bg-green {
+  background-color: #ffffff; /* Nuevo color de fondo verde */
+}
+
+#messageContainer {
+  font-size: 30px;
+  color: #ff0000; /* Color rojo */
+  font-family: "YourDesiredFont", sans-serif; /* Reemplaza 'YourDesiredFont' con la fuente que desees */
+  text-shadow: 2px 2px 4px #000; /* Borde simulado */
+  animation: pulse 0.5s infinite alternate; /* Animación de palpitación más rápida */
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3); /* Zoom más grande */
+  }
+}
+    </style>
+    <body>
+        <div class="container">
+    
+            <div id="gifContainer">
+                <img id="gifContainerImg" src="https://i.pinimg.com/originals/96/91/0a/96910a7cedeff19c958ac2a78286bd6f.gif" alt="Ositos Iniciales" ">
+            </div>
+            <div id="happyGifContainer" style="display: none;">
+                <img src="https://i.pinimg.com/originals/64/f9/42/64f9429ef6930315ea766b34911680da.gif" alt="Ositos Felices" style="width: 100%; height: 100%;">
+            </div>
+            <div id="happyGifContainer2" style="display: none;">
+                <img src="https://i.pinimg.com/originals/cb/b6/83/cbb683633d5e41a3ca9b9ac91f8fed62.gif" alt="Ositos Felices" style="width: 100%; height: 100%;">
+            </div>
+            <div id="happyGifContainer3" style="display: none;">
+                <img src="https://i.pinimg.com/originals/cb/b6/83/cbb683633d5e41a3ca9b9ac91f8fed62.gif" alt="Ositos Felices" style="width: 100%; height: 100%;">
+            </div>
+            <div id="happyGifContainer4" style="display: none;">
+                <img src="https://i.pinimg.com/originals/cb/b6/83/cbb683633d5e41a3ca9b9ac91f8fed62.gif" alt="Ositos Felices" style="width: 100%; height: 100%;">
+            </div>
+            <div id="sadGifContainer" style="display: none;">
+                <img src="https://i.pinimg.com/originals/f9/a0/e8/f9a0e87072bea5a4d98941604c043d06.gif" alt="Osito Triste" style="width: 80%; height: 80%;">
+            </div>
+            <div id="sadGifContainer1" style="display: none;">
+                <img src="https://i.pinimg.com/originals/dc/5b/14/dc5b14dc4392f09e89312cd6b23d6e69.gif" alt="Osito Triste" style="width: 80%; height: 80%;">
+            </div>
+            <div id="sadGifContainer2" style="display: none;">
+                <img src="https://i.pinimg.com/originals/d3/33/92/d33392a3996ce53dd3ecff507afe5209.gif" alt="Osito Triste" style="width: 80%; height: 80%;">
+            </div>
+    
+            <h1 id="question">¿sabias que te amo?</h1>
+            <div id="messageContainer" style="display: none;"></div>
+    
+            <button id="siBtn">Sípi</button>
+            <button id="noBtn">Nopi</button>
+    
+        </div>
+    
+        <script>
+                                                                                                                                                                            let noButtonClickCount = 0; // Contador para el botón "No"
+let noButtonState = 0; // Estado actual del botón "No"
+
+// Mostrar el gif inicial
+document.getElementById('gifContainer').style.display = 'block';
+
+document.getElementById('siBtn').addEventListener('click', function() {
+    // Ocultar el gif triste y mostrar el gif feliz
+    document.getElementById('sadGifContainer').style.display = 'none';
+    document.getElementById('sadGifContainer1').style.display = 'none';
+    document.getElementById('sadGifContainer2').style.display = 'none';
+    document.getElementById('gifContainer').style.display = 'none';
+    document.getElementById('happyGifContainer').style.display = 'block';
+
+    // Ocultar los botones "Pregunta Sí" y "No "
+    document.getElementById('question').style.display = 'none';
+    document.getElementById('siBtn').style.display = 'none';
+    document.body.classList.add('bg-green');
+    document.getElementById('noBtn').style.display = 'none';
+
+    // Mostrar el mensaje específico
+    document.getElementById('messageContainer').style.display = 'block';
+    document.getElementById('messageContainer').innerHTML = '¡ahhhhhh si sabias,te amoooooooo';
+
+    // Mostrar otro gif después de 3 segundos
+    setTimeout(function() {
+        document.getElementById('happyGifContainer').style.display = 'none';
+        document.getElementById('happyGifContainer2').style.display = 'block';
+    }, 1000);
+
+    setTimeout(function() {
+        document.getElementById('happyGifContainer2').style.display = 'none';
+        document.getElementById('happyGifContainer3').style.display = 'block';
+    }, 2000);
+    setTimeout(function() {
+        document.getElementById('happyGifContainer3').style.display = 'none';
+        document.getElementById('happyGifContainer4').style.display = 'block';
+    }, 3000);
+  
+});
+
+
+document.getElementById('noBtn').addEventListener('click', function() {
+    switch (noButtonState) {
+        case 0:
+            // Primera vez haciendo clic en "No"
+            document.getElementById('happyGifContainer').style.display = 'none';
+            document.getElementById('gifContainer').style.display = 'none';
+            document.getElementById('sadGifContainer').style.display = 'block';
+
+            // Modificar el botón "No"
+            document.getElementById('noBtn').innerHTML = '¡no sabias?';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+          
+            
+            document.getElementById('siBtn').style.fontSize = '40px';
+            document.getElementById('siBtn').style.padding = '20px 40px';
+       
+            
+           
+
+        
+            noButtonClickCount++;
+            noButtonState++;
+            break;
+
+        case 1:
+            // Segunda vez haciendo clic en "No"
+
+            document.getElementById('noBtn').innerHTML = '¡¿de verdad no sabias?!';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+            document.getElementById('sadGifContainer').style.display = 'none';
+            document.getElementById('sadGifContainer2').style.display = 'block';
+
+            // Hacer que el botón "Sí" crezca
+            document.getElementById('siBtn').style.fontSize = '50px';
+            document.getElementById('siBtn').style.padding = '30px 50px';
+        
+            noButtonState++;
+            break;
+
+        case 2:
+           
+            document.getElementById('noBtn').innerHTML = 'Estás segurita que no sabias, ¿eh?';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+            document.getElementById('sadGifContainer').style.display = 'none';
+            document.getElementById('sadGifContainer2').style.display = 'none';
+            document.getElementById('sadGifContainer1').style.display = 'block';
+
+            // Hacer que el botón "Sí" crezca
+            document.getElementById('siBtn').style.fontSize = '60px';
+            document.getElementById('siBtn').style.padding = '40px 60px';
+        
+            noButtonState++;
+            break;
+        
+        case 3:
+           
+            document.getElementById('noBtn').innerHTML = '¿encerio no sabias?';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            // Hacer que el botón "Sí" crezca
+            document.getElementById('siBtn').style.fontSize = '70px';
+            document.getElementById('siBtn').style.padding = '50px 70px';
+        
+            noButtonState++;
+            break;
+        case 4:
+           
+            document.getElementById('noBtn').innerHTML = 'deberitas no sabias?';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            // Hacer que el botón "Sí" crezca
+            document.getElementById('siBtn').style.fontSize = '80px';
+            document.getElementById('siBtn').style.padding = '60px 80px';
+         
+            noButtonState++;
+            break;
+        case 5:
+           
+            document.getElementById('noBtn').innerHTML = 'deberitas,deberitas?';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            // Hacer que el botón "Sí" crezca
+            document.getElementById('siBtn').style.fontSize = '90px';
+            document.getElementById('siBtn').style.padding = '70px 90px';
+
+            noButtonState++;
+            break;
+        case 6:
+           
+            document.getElementById('noBtn').innerHTML = 'deberitas,deberitas,deberitas?';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            // Hacer que el botón "Sí" crezca
+            document.getElementById('siBtn').style.fontSize = '100px';
+            document.getElementById('siBtn').style.padding = '80px 100px';
+            
+            noButtonState++;
+            break;
+        case 7:
+           
+            document.getElementById('noBtn').innerHTML = 'yo creo que si sabias';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            // Hacer que el botón "Sí" crezca
+            document.getElementById('siBtn').style.fontSize = '120px';
+            document.getElementById('siBtn').style.padding = '90px 120px';
+  
+            noButtonState++;
+            break;
+        case 8:
+           
+            document.getElementById('noBtn').innerHTML = 'de verdad no sabes?';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            document.getElementById('siBtn').style.fontSize = '140px';
+            document.getElementById('siBtn').style.padding = '100px 140px';
+       
+            noButtonState++;
+            break;
+
+        case 9:
+           
+            document.getElementById('noBtn').innerHTML = 'yo no creo, tu si sabes';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            // Hacer que el botón "Sí" crezca
+            document.getElementById('siBtn').style.fontSize = '160px';
+            document.getElementById('siBtn').style.padding = '110px 160px';
+          
+            noButtonState++;
+            break;
+
+        case 10:
+           
+        document.getElementById('noBtn').innerHTML = 'ahhh, okas :(...';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+         
+            document.getElementById('siBtn').style.fontSize = '180px';
+            document.getElementById('siBtn').style.padding = '120px 180px';
+    
+            noButtonState++;
+            break;
+        case 11:
+           
+            document.getElementById('noBtn').innerHTML = 'nononono estoy seguro que si sabias';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            document.getElementById('siBtn').style.fontSize = '200px';
+            document.getElementById('siBtn').style.padding = '130px 200px';
+            
+            noButtonState++;
+            break;
+        
+        case 12:
+           
+            document.getElementById('noBtn').innerHTML = 'yo se que si sabias';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            // Hacer que el botón "Sí" crezca
+            document.getElementById('siBtn').style.fontSize = '220px';
+            document.getElementById('siBtn').style.padding = '140px 220px';
+    
+            noButtonState++;
+            break;
+        
+        case 13:
+           
+            document.getElementById('noBtn').innerHTML = 'si sabessss';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            document.getElementById('siBtn').style.fontSize = '240px';
+            document.getElementById('siBtn').style.padding = '150px 240px';
+         
+            noButtonState++;
+            break;
+        
+        case 14:
+           
+            document.getElementById('noBtn').innerHTML = 'NO... encerio no lo sabias';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            // Hacer que el botón "Sí" crezca
+            document.getElementById('siBtn').style.fontSize = '260px';
+            document.getElementById('siBtn').style.padding = '160px 260px';
+            
+            noButtonState++;
+            break;
+        
+        case 15:
+           
+            document.getElementById('noBtn').innerHTML = 'yo pense que si';
+            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+
+            // Hacer que el botón "Sí" crezca
+            document.getElementById('siBtn').style.fontSize = '280px';
+            document.getElementById('siBtn').style.padding = '170px 280px';
+          
+            noButtonState++;
+            break;
+        
+     
+        case 16:
+                document.getElementById('noBtn').innerHTML = 'TU SI SABESSSSS';
+                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+              
+                document.getElementById('sadGifContainer').style.display = 'none';
+                document.getElementById('sadGifContainer1').style.display = 'none';
+                document.getElementById('sadGifContainer2').style.display = 'none';
+                document.getElementById('gifContainer').style.display = 'block';
+                document.getElementById('happyGifContainer').style.display = 'none';
+                // Vuelve al estado 0
+                noButtonState = 0;
+                break;
+        
+
+        default:
+            // Por si acaso, maneja cualquier otro caso aquí
+            break;
+    }
+}); 
+        </script>
+    </body>
+    </html> 
+     
+     
+     
+                
