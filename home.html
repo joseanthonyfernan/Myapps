@@ -7,26 +7,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <!--========== CSS ==========-->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="icon" href="assets/images/medallo-brother's.png" type="image/x-icon">
     <title>Pre-Enrollment</title>
+    <link rel="icon" href="assets/images/medallo-brother's.png" type="image/x-icon">
+
     
     <style>
         body {
-    background: url('assets/images/3460419_62611.jpg');
-    background-blend-mode: overlay;
-    background-size: cover;
-    background-position: center;
-    animation: gradientAnimation 5s infinite alternate;
+    background-image: url('assets/images/rsz_school-template-hero-img-bg.jpg');
+    background-size: cover;  /* Ensures the image covers the entire screen */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;  /* Prevents tiling */
+    background-attachment: fixed;  /* Keeps the image fixed while scrolling */
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: left top;
-    }
-    100% {
-        background-position: right bottom;
-    }
-}
 
         /* Popup Styling */
         .popup {
@@ -137,7 +130,24 @@
     <div id="Cheesecake" class="tabcontent">
         <p>PROCESS NO. 2</p>
         <div class="image-container">
-           
+            <img src="assets/images/1741047654211.jpg" alt="Step 1" onclick="openPopup(this, 'STEP 1', 'Open the email sent by the Guidance Office.')">
+            <img src="assets/images/1741047654198.jpg" alt="Step 2" onclick="openPopup(this, 'STEP 2', 'Press the Fill PIS Form button to access the PIS form.')">
+            <img src="assets/images/1741047654179.jpg" alt="Step 3" onclick="openPopup(this, 'STEP 3', 'Always enable the Desktop Site option to see the full view.')">
+            <img src="assets/images/1741047654165.jpg" alt="Step 4" onclick="openPopup(this, 'STEP 4', 'Complete all required personal information fields accurately. Ensure that every section is filled out before proceeding. If a question does not apply to you, type N/A as instructed. Double-check your details to avoid errors. Once all information is entered correctly, click the Continue button to move forward. ')">
+            <img src="assets/images/1741047654148.jpg" alt="Step 5" onclick="openPopup(this, 'STEP 5', 'Complete all the required fields in the Family Background section, then click the Continue button once your done. If a question does not apply to you, type N/A as instructed. Double-check your details to avoid errors.')">
+            <img src="assets/images/1741047654130.jpg" alt="Step 6" onclick="openPopup(this, 'STEP 6', 'You may skip filling out these fields and press the Continue button to proceed to the next step.')">
+            <img src="assets/images/1741047654108.jpg" alt="Step 7" onclick="openPopup(this, 'STEP 7', 'You may skip filling out these fields and press the Continue button to proceed to the next step.')">
+            <img src="assets/images/1741047654083.jpg" alt="Step 8" onclick="openPopup(this, 'STEP 8', 'You may skip filling out these fields and press the Continue button to proceed to the next step.')">
+            <img src="assets/images/1741047654070.jpg" alt="Step 9" onclick="openPopup(this, 'STEP 9', 'You may skip filling out these fields and press the Continue button to proceed to the next step.')">
+            <img src="assets/images/1741047654057.jpg" alt="Step 10" onclick="openPopup(this, 'STEP 10', 'You may skip filling out these fields and press the Continue button to proceed to the next step.')">
+            <img src="assets/images/1741047654039.jpg" alt="Step 11" onclick="openPopup(this, 'STEP 11', 'You may skip filling out these fields and click the Submit button to finalize and submit your data.')">
+            <img src="assets/images/1741047654018.jpg" alt="Step 12" onclick="openPopup(this, 'STEP 12', 'The submission process is complete! If you need more information, you may visit the Guidance Office or contact them. Let me know if you need any further assistance.')">
+            <img src="assets/images/1741047654003.jpg" alt="Step 13" onclick="openPopup(this, 'STEP 13', 'Open the email sent by the Guidance Office.')">
+            <img src="assets/images/1741047653981.jpg" alt="Step 14" onclick="openPopup(this, 'STEP 14', 'Press the Admission Test button to access the Date and Time Selection For Admission Test.')">
+            <img src="assets/images/1741047653902.jpg" alt="Step 15" onclick="openPopup(this, 'STEP 18', 'Select your preferred date, time, and course for the admission test. Once you made your selections, press the Submit button to confirm. Make sure to double-check your choices before proceeding.')">
+            <img src="assets/images/1741047653887.jpg" alt="Step 16" onclick="openPopup(this, 'STEP 19', 'Press the Okay Thanks! button to confirm that you have completed the process.')">
+            <img src="assets/images/1741047653868.jpg" alt="Step 17" onclick="openPopup(this, 'STEP 20', 'Press the Accounts button to access your dashboard or MCC enrollment account. ')">
+            <img src="assets/images/1741047653850.jpg" alt="Step 18" onclick="openPopup(this, 'STEP 21', 'Welcome your Dashboard')">
         </div>
     </div>
 
@@ -172,6 +182,7 @@
         }
     </script>
 
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         if (window.location.href.includes("home.html")) {
@@ -179,6 +190,5 @@
         }
     });
 </script>
-
 </body>
 </html>
